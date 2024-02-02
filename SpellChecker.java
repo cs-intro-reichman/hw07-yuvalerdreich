@@ -60,13 +60,13 @@ public class SpellChecker {
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 		String targetWord = word;
 		int minDis = Integer.MAX_VALUE;
-		String closestWord = null;
+		String closestWord = "";
 
 		for (int i = 0; i < dictionary.length; i++) {
-			int Dis = levenshtein(targetWord, dictionary[i]);
-			minDis = Math.min(minDis, Dis);
+			int dis = levenshtein(targetWord, dictionary[i]);
+			minDis = Math.min(minDis, dis);
 			
-			if (Dis <= minDis) {
+			if (dis <= minDis) {
 				closestWord = dictionary[i];
 			}
 
