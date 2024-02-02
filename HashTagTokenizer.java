@@ -47,10 +47,10 @@ public class HashTagTokenizer {
         }
  
         int N = hashtag.length();
-		String lowerCaseHashtag = hashtag.toLowerCase();
+		hashtag = hashtag.toLowerCase();
 
         for (int i = 1; i <= N; i++) {
-			String subString = lowerCaseHashtag.substring(0, i);
+			String subString = hashtag.substring(0, i);
 
 			if (existInDictionary(subString, dictionary)) {
 				System.out.println(subString);
