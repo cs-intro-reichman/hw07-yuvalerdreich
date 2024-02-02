@@ -27,12 +27,12 @@ public class HashTagTokenizer {
 	}
 
 	public static boolean existInDictionary(String word, String []dictionary) {
-		if (word == null) {
-			return false;
-		}
+		///if (word == null) {
+			///return false;
+		///}
 
 		for(int i = 0; i < dictionary.length; i++){
-			if (dictionary[i].equals(word)){
+			if (word.equals(dictionary[i])){
 				return true;
 			}
 		}
