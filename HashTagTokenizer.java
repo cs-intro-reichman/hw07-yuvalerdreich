@@ -32,7 +32,7 @@ public class HashTagTokenizer {
 		}
 
 		for(int i = 0; i < dictionary.length; i++){
-			if (word.equals(dictionary[i])){
+			if (dictionary[i].equals(word)){
 				return true;
 			}
 		}
@@ -60,6 +60,7 @@ public class HashTagTokenizer {
 			}
 		
         }
+		breakHashTag(hashtag.substring(N), dictionary);
     }
 
 }

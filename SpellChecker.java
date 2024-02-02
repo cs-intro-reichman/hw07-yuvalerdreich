@@ -59,25 +59,24 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
-		String targetWord = word;
-		int minDis = Integer.MAX_VALUE;
+		int min = levenshtein(word, dictionary[0]);
+		String target = dictionary[0];
 
-		for (int i = 0; i < dictionary.length; i++) {
-			int dis = levenshtein(word, dictionary[i]);
+		for (int i = 1; i < dictionary.length; i++) {
+			int edit = levenshtein(word, dictionary[i]);
 			
-			if (dis < minDis) {
-				minDis = dis;
-				targetWord = dictionary[i];
+			if (edit < min) {
+				min = edit;
+				target = dictionary[i];
 			}
 
 		}
 
-		if (minDis > threshold) {
+		if (min > threshold) {
 			return word;
 
-		} else {
-			return targetWord;
 		}
+		return target;
 	}
 
 }
