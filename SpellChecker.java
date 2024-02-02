@@ -37,23 +37,23 @@ public class SpellChecker {
 		if (word1.charAt(0) == word2.charAt(0)){
 			return levenshtein(tail(word1), tail(word2));
 
+		} else {
+			return 1 + Math.min(Math.min(levenshtein(tail(word1), word2), levenshtein(word1, tail(word2))), levenshtein(tail(word1), tail(word2)));
 		}
 
-		return 1 + Math.min(Math.min(levenshtein(tail(word1), word2), levenshtein(word1, tail(word2))), levenshtein(tail(word1), tail(word2)));
+		
 	}
 
 	public static String[] readDictionary(String fileName) {
 		String[] dictionary = new String[3000];
 
 		In in = new In(fileName);
+		int i = 0;
 
-		for (int i = 0; i < dictionary.length; i++) {
-			String line = in.readLine();
-			if (line != null){
-				if (!line.isEmpty()) {
-					dictionary[i] = in.readString();
-				}
-			}
+		while (!in.isEmpty()) {
+			String word = in.readLine();
+			dictionary[i] = word;
+			i++;
 		}
 		return dictionary;
 	}
