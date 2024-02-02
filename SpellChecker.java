@@ -12,11 +12,7 @@ public class SpellChecker {
 
 	public static String tail(String str) {
 
-		if (str.length() <= 1) {
-			return null;
-		}
-
-		return str.substring(1);
+		return null;
 	}
 
 	public static int levenshtein(String word1, String word2) {
@@ -24,9 +20,6 @@ public class SpellChecker {
 		word2 = word2.toLowerCase();
 		int a = word1.length();
 		int b = word2.length();
-		int first = levenshtein(word1.substring(0, a - 1), word2);
-		int second = levenshtein(word1, word2.substring(0, b - 1));
-		int third = levenshtein(word1.substring(0, a - 1), word2.substring(0, b - 1));
 
 
 		if (b == 0) {
@@ -41,6 +34,9 @@ public class SpellChecker {
 			return levenshtein(word1.substring(0, a - 1), word2.substring(0, b - 1));
 
 		}
+		int first = levenshtein(word1, word2.substring(0, b - 1));
+		int second = levenshtein(word1.substring(0, a - 1), word2);
+		int third = levenshtein(word1.substring(0, a - 1), word2.substring(0, b - 1));
 
 		return 1 + Math.min(Math.min(first, second), third);
 	}
