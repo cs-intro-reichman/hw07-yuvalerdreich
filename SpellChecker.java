@@ -50,9 +50,13 @@ public class SpellChecker {
 
 		In in = new In(fileName);
 
-		for (int i = 0; i < dictionary.length && !in.isEmpty(); i++) {
-			dictionary[i] = in.readString();
-			
+		for (int i = 0; i < dictionary.length; i++) {
+			String line = in.readLine();
+			if (line != null){
+				if (!line.isEmpty()) {
+					dictionary[i] = in.readString();
+				}
+			}
 		}
 		return dictionary;
 	}
