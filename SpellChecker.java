@@ -68,7 +68,6 @@ public class SpellChecker {
 		int minDis = Integer.MAX_VALUE;
 
 		for (int i = 0; i < dictionary.length; i++) {
-			dictionary[i] = dictionary[i].toLowerCase();
 			int dis = levenshtein(word, dictionary[i]);
 			
 			if (dis < minDis) {
