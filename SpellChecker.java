@@ -70,9 +70,9 @@ public class SpellChecker {
 
 		for (int i = 0; i < dictionary.length; i++) {
 			int dis = levenshtein(targetWord, dictionary[i]);
-			minDis = Math.min(minDis, dis);
 			
-			if (dis <= minDis) {
+			if (dis < minDis) {
+				minDis = dis;
 				closestWord = dictionary[i];
 			}
 
