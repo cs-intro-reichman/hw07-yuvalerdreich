@@ -27,9 +27,6 @@ public class HashTagTokenizer {
 	}
 
 	public static boolean existInDictionary(String word, String []dictionary) {
-		///if (word == null) {
-			///return false;
-		///}
 
 		for(int i = 0; i < dictionary.length; i++){
 			if (word.equals(dictionary[i])){
@@ -49,16 +46,14 @@ public class HashTagTokenizer {
         int N = hashtag.length();
 		hashtag = hashtag.toLowerCase();
 
-        for (int i = 1; i <= N; i++) {
-			String subString = hashtag.substring(0, i);
+        for (int i = 0; i <= N; i++) {
+			String prefix = hashtag.substring(0, i);
 
-			if (existInDictionary(subString, dictionary) == true) {
-				System.out.println(subString);
+			if (existInDictionary(prefix, dictionary) == true) {
+				System.out.println(prefix);
 				breakHashTag(hashtag.substring(i), dictionary);
 				break;
-
 			}
-		
         }
 		breakHashTag(hashtag.substring(N), dictionary);
     }

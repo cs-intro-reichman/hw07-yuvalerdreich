@@ -39,7 +39,7 @@ public class SpellChecker {
 
 		}
 
-		return 1 + Math.min(Math.min(levenshtein(tail(word1), word2), (levenshtein(tail(word1), word2))), levenshtein(tail(word1), tail(word2)));
+		return 1 + Math.min(Math.min(levenshtein(tail(word1), word2), levenshtein(word1, tail(word2))), levenshtein(tail(word1), tail(word2)));
 	}
 
 	public static String[] readDictionary(String fileName) {
