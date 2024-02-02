@@ -52,9 +52,10 @@ public class HashTagTokenizer {
         for (int i = 1; i <= N; i++) {
 			String subString = hashtag.substring(0, i);
 
-			if (existInDictionary(subString, dictionary)) {
+			if (existInDictionary(subString, dictionary) == true) {
 				System.out.println(subString);
 				breakHashTag(hashtag.substring(i), dictionary);
+				break;
 
 			}
 		
