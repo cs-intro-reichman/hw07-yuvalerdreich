@@ -15,8 +15,7 @@ public class HashTagTokenizer {
 		In in = new In(fileName);
 
 		for (int i = 0; i < dictionary.length && !in.isEmpty(); i++) {
-			String word = in.readString();
-			dictionary[i] = word;
+			dictionary[i] = in.readString();
 			
 		}
 
