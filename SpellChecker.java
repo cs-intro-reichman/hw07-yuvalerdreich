@@ -77,11 +77,11 @@ public class SpellChecker {
 
 		}
 
-		if (minDis <= threshold) {
-			return targetWord;
+		if (minDis > threshold) {
+			return word;
 
 		} else {
-			return word;
+			return targetWord;
 		}
 	}
 
