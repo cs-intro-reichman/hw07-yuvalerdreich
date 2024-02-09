@@ -22,10 +22,9 @@ public class SpellChecker {
 		
 		word1 = word1.toLowerCase();
 		word2 = word2.toLowerCase();
-		int a = word1.length();
-		int b = word2.length();
-
-
+		int a = word1.length(); // bad naming
+		int b = word2.length(); // bad naming
+		//There isn't a real need for variables a and b
 		if (b == 0) {
 			return a;
 
